@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #20272F;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            position: sticky;
+            top: 0; /* Menambahkan ini agar navbar tetap di atas saat scroll */
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.7), 0px 0px 10px rgba(255, 0, 255, 0.7);
+            border-radius: 10px;
+            margin: 20px;
+            transition: all 0.3s ease;
+            z-index: 1000; /* Menambahkan z-index agar navbar selalu di atas elemen lainnya */
+        }
+
+
+        .navbar:hover {
+            background-color: rgba(169, 169, 169, 0.2);
+            box-shadow: 0px 6px 20px rgba(0, 255, 255, 0.9), 0px 0px 12px rgba(255, 0, 255, 0.9);
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 28px;
+            font-family: 'Poppins', sans-serif;
+            color: #00FFF0;
+            font-weight: 600;
+            text-shadow: 0px 0px 8px rgba(0, 255, 255, 0.8);
+        }
+
+        .elemen a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .elemen a:hover {
+            color: #00BD95;
+            text-shadow: 0px 0px 8px #00BD95;
+        }
+
+        .content {
+            padding-top: 100px; /* Menggunakan padding sebagai pengganti margin-top */
+            margin-left: 35px;
+            padding: 0 40px;
+            margin-top: 12%;
+        }
+
+        .content h2 {
+            margin-bottom: 0;
+            line-height: 1.2;
+            font-size: 35px; /* Ukuran font diperbesar */
+        }
+
+        .content h1 {
+            margin-top: 5px;
+            line-height: 1.2;
+            font-size: 55px; /* Ukuran font diperbesar */
+        }
+
+
+        .content span {
+            color: #00BD95;
+        }
+
+        
+        .conten-isi p {
+            line-height: 1.9; /* Menambah jarak antar baris */
+            font-weight: 500; /* Ketebalan medium */
+            font-size: 18px; /* Ukuran font yang sesuai */
+            color: #afafaf;
+            font-family: Arial, sans-serif; /* Pilih font sesuai preferensi */
+            padding-left: 90px;
+        }
+
+        .gambar {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .gambar img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 50px;
+            box-shadow: 0px 4px 10px rgba(43, 245, 245, 0.5);
+            margin-left: 55%;
+            margin-top: -17%;
+            transition: transform 0.6s ease, box-shadow 0.3s ease;
+        }
+
+        .gambar img:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0px 8px 20px rgba(43, 245, 245, 0.7);
+        }
+
+        .gambar1 {
+            margin-top: -15%;
+            margin-left: 1%;
+            width: 100%; /* Buat elemen pembungkus menyesuaikan lebar */
+            height: auto;
+        }
+        
+        .gambar1 img {
+            width: 700px; /* Ukuran gambar besar */
+            height: auto;
+        }
+                
+        /* Updated About Me Section Styles */
+        .conten-detile {
+            margin-top: -34%;
+            color: #fff;
+            margin-left: 47%;
+            max-width: 50%; /* Membatasi lebar maksimal agar lebih terstruktur */
+        }
+
+        .conten-detile h1 {
+            font-size: 40px;
+            color: #00BD95;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 189, 149, 0.7), 0 0 20px rgba(0, 189, 149, 0.5); /* Efek aura */
+        }
+
+        .conten-detile p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #f0f0f0;
+            font-weight: 300;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .conten-detile span{
+            color:  #00BD95;
+        }
+
+        
+            /* Styling for the Project Section */
+        .project {
+            text-align: center;
+            margin-top: 5%;
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .tulis{
+            color: rgba(0, 255, 255, 0.8);
+            text-shadow: 0 0 10px rgba(0, 189, 149, 0.7), 0 0 20px rgba(0, 189, 149, 0.5); /* Efek aura */  
+        }
+
+        /* Flexbox for Project Cards */
+        .project-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px; /* Spacing between cards */
+            margin-top: 40px;
+        }
+
+        /* Styling for Individual Cards */
+        .card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card span{
+            color:  #00BD95;
+        }
+
+        /* Hover Effect for Cards */
+        .card:hover {
+            box-shadow: 0 8px 18px rgba(0, 255, 255, 0.4);
+            transform: scale(1.04); /* Membesar saat dihover */
+            transition: transform 0.5s ease, box-shadow 0.5s ease; /* Pastikan transisi ada */
+        }
+
+
+        /* Image Styling in Cards */
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Heading and Text Styling */
+        .card h3 {
+            color: #00BD95;
+            font-size: 35px;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card h3 span{
+            color:  rgba(0, 255, 255, 0.7);
+        }
+
+        .card p {
+            color: #d0d0d0;
+            font-size: 15px;
+            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Styling for Links */
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 25px;
+            text-decoration: none;
+            color: rgba(0, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+        
+        .card a:hover {
+            color: rgba(0, 255, 255, 1);
+        }
+
+        .card a span {
+            color: #0a9a82; /* Hijau agak gelap */
+            transition: color 0.3s ease;
+        }
+
+        /* Warna span saat hover pada .card a */
+        .card a:hover span {
+            color: #00FFAB; /* Hijau neon saat hover */
+        }
+
+        .sertifikat {
+            text-align: center;
+            margin: 50px auto;
+            max-width: 600px;
+            margin-top: 8%;
+        }
+
+        .sertifikat h1 {
+            font-size: 65px;
+            color: #00BD95;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 0 10px rgba(0, 189, 149, 0.7), 0 0 20px rgba(0, 189, 149, 0.5); /* Efek aura */
+        }
+
+        .certificate-container {
+            background-color: rgba(248, 248, 248, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(239, 239, 239, 0.5); /* Bayangan default */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.6s ease, box-shadow 0.3s ease; /* Transisi untuk zoom dan bayangan */
+        }
+
+        /* Efek zoom dan aura saat hover */
+        .certificate-container:hover {
+            transform: scale(1.05); /* Zoom in */
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.9); /* Aura saat hover */
+        }
+
+        .certificate-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 189, 149, 0.3);
+            margin-bottom: 15px;
+        }
+
+        .certificate-info {
+            text-align: center;
+        }
+
+        .certificate-info h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        .certificate-info h2 span{
+            color: #00BD95;
+        }
+
+        .sosmed {
+            text-align: center;
+            margin: 50px auto; /* Mengubah margin untuk menyeimbangkan atas dan bawah serta menyelaraskan tengah */
+            max-width: 600px; /* Atur lebar maksimum untuk menjaga agar tidak terlalu lebar */
+            
+        }
+
+        .sosmed p {
+            margin-top: 20%;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        
+        .sosmed span {
+            color: #00BD95;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .social-icon {
+            color: #00BD95;
+            margin: 0 15px;
+            font-size: 30px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: #009B7D;
+            transform: scale(1.2);
+        }
+
+        footer {
+            background-color: #20272F; /* Warna latar belakang */
+            border-top: 2px solid  #00BD95; /* Menambahkan border hanya di bagian atas dengan warna merah */
+            color: white; /* Warna teks */
+            padding: 40px 0; /* Padding atas dan bawah */
+            font-family: 'Arial', sans-serif; /* Font yang digunakan */
+            position: relative; /* Untuk posisi relatif */
+            z-index: 1; /* Untuk menjaga footer di atas elemen lain */
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex-basis: 30%;
+        }
+
+        .footer-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #00BD95; /* Warna teks hijau untuk judul */
+        }
+
+        .footer-section p, .footer-section a {
+            font-size: 1.1em;
+            margin: 10px 0;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer-section a:hover {
+            color: #00BD95;  /* Warna hijau saat link di-hover */
+            transition: color 0.3s ease;
+        }
+
+        </style>
+    </head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Portofolio</h1>
+        <div class="elemen">
+            <a href="#about">About Me</a>
+            <a href="#project">Project</a>
+            <a href="#sertifikat">Certificate</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="about" class="content">
+        <h2>Hello, <span>I'm</span> Syahru</h2>
+        <h1>UI & UX And Web <span>Developer.</span></h1>
+    </div>
+    
+    <div  class="conten-isi">
+        <p>Hello, I'm Syahru, a passionate UI/UX and web designer. Welcome  <br>
+            to my portfolio, where creativity meets functionality. </p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="gambar">
+        <img src="asset/me.png" alt="A picture of Syahru Ramadhan Putra Nur Khair">
+    </div>
+
+    <!-- gambar domba -->
+    <div class="gambar1">
+        <img src="asset/domba.png" alt="Domba">
+    </div>
+    
+    <div class="conten-detile"> 
+        <h1>About Me</h1> 
+        <p>Hi, I'm <span>Syahru</span>, a vocational high school student passionate about <span>UI/UX design</span> and <span>web development</span>.</p>
+        <p>I'm learning to create <span>a user-friendly designs</span> and build <span>responsive web applications</span> using <strong>HTML</strong>, 
+        <strong>CSS</strong>, <strong>JavaScript</strong>, and <strong>PHP</strong>, while exploring frameworks like <span>Laravel</span>.</p>
+        <p>My goal is to connect <span>designs</span> and <span>development</span>, ensuring seamless <span>user experiences</span>. I have a 
+        <span>deep love for design</span>, and I also find it very very satisfying when I can put my <span>design creations</span> into <span>code</span>. Every
+         <span>element</span> i design comes to life when translated into <span>digital form</span>, creating a <span>harmonious experience</span> between 
+        <span>visuals</span> and <span>functionality</span>.</p>
+        <p>Collaboration is the <span>key</span> to a great project. Let's <span>connect</span> and create something <span>extraordinary</span>.
+    </div>
+    
+    <div  id="project" class="project">
+        <h1 class="tulis">My Projects</h1>
+        <div class="project-cards">
+            <div class="card">
+                <h3>Coffee Shop Design</h3>
+                <img src="asset/app.png" alt="Coffee Shop Design">
+                <p>This is <span>the</span> UI design of an <span>application </span>called My <span>Coffee</span> Today, featuring <span>registration</span>, purchase, <span>and</span> payment <span>systems</span>.</p>
+                <a href="https://www.figma.com/design/eHzEHsFeMQzcO1srEX4WJi/Untitled?node-id=0-1&node-type=canvas&t=eNdIBAa3npKN5vQY-0" target="_blank">See Project</a>
+            </div>
+            <div class="card">
+                <h3><span>Cashier</span></h3>
+                <img src="asset/leptop.png" alt="Cashier Web App">
+                <p>This is a <span>cashier web</span> project built with the <span>Laravel</span> framework. It includes <span> features</span> for managing <span>products</span>, members, and <span>history</span>, with login <span>access </span>for 3 roles: Super Admin, Admin, and <span>Officer</span>.</p>
+                <a href="" target="_blank"><span>See Project</span></a>
+            </div>
+            <div class="card">
+                <h3>Flappy Bird</h3>
+                <img src="asset/game.png" alt="Project Title 3">
+                <p>this <span>is</span> a simple web- <span>based</span> game that uses <span>html</span>, css, <span>java</span> scripts. <span>and</span> this <span>game</span> has a <span>feature</span> to calculate <span>scores</span></p>
+                <a href="https://github.com/Syahrurama/Game-Web" target="_blank">See Project</a>
+            </div>
+            <div class="card">
+                <h3><span>Login Design</span></h3>
+                <img src="asset/app 1.png" alt="Project Title 4">
+                <p>This is a <span>login</span> interface <span>design</span> that is simple <span>and</span> also easy <span>to</span> understand. <span>and</span> also has <span>elements</span> that <span>support</span> a good <span>user</span> experience. <span>The</span> use of contrasting colors <span>makes</span> it easy 
+                    for users to <span>focus</span> on important <span>elements</span>, such as the <span>login</span> form and action <span>buttons</span>..</p>
+                <a href="https://www.figma.com/design/vBCv2tQsT1Pk7fmzJMIOP8/Untitled?node-id=0-1&node-type=canvas&t=GvYE4Xu2DG5xqsvx-0" target="_blank"><span>See Project</span></a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="sertifikat" class="sertifikat">
+        <h1>Certificate</h1>
+        <div class="certificate-container">
+            <img src="asset/sertifikat.jpg" alt="Certificate" class="certificate-img">
+            <div class="certificate-info">
+                <h2>Certificate of <span> Achievement</span></h2>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Sosmed Section -->
+    <div id="contact"  class="sosmed">    
+        <p>Follow my journey on <span>Social Media!</span></p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/syhr.dev" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/syahrurama" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/089501812759" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                
+                <h2>Syahru Ramadhan P.N.K</h2>
+                <p>Contact Me:</p>
+                <p><a href="mailto:syahrurama04@gmail.com">syahrurama04@gmail.com</a></p>
+                <p>Curug, Cimanggis, Depok, West Java, Indonesia</p>
+            </div>
+            <div class="footer-section">
+                <h2>Skills</h2>
+                <p>UI & UX Design</p>
+                <p>Laravel (Basic)</p>
+                <p>Flutter (Basic)</p>
+            </div>
+            <div class="footer-section">
+                <h2>Follow Me</h2>
+                <p><a href="https://www.instagram.com/syhr.dev">Instagram</a></p>
+                <p><a href="#">LinkedIn</a></p>
+                <p><a href="https://github.com/syahrurama">GitHub</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        // Smooth Scrolling for Navbar Links
+        document.querySelectorAll('.elemen a').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        }); 
+    
+        
+    
+    
+      
+    </script>
+        
+</body>
+</html>
